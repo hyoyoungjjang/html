@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          #d1{
+            box-sizing: border-box;
+            border: 1px solid #6990b3;
+            background-color: #deebf7;
+            width: 1000px;
+            height: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          #d2{
+            border: 1px solid #e0e1e0;
+            background-color: #ededed;
+            width: 60%;
+            height: 90%;
+          }
+          .user{
+            font-weight: bold;
+            font-size: larger;
+            padding-top: 50px;
+            padding-left: 20px;
+            width: 80%;
+            height: auto;
+            margin-left: 30px;
+          }
+          input{
+            width: 250px;
+            border: none;
+            border-bottom: black dashed 3px ;
+            background-color: #ededed;
+            
+        }
+
+
+        #click1{
+            border: 1px solid #d8e6cf;
+            background-color: #c5e0b4;
+            font-size: 20px;
+            font-weight: bolder;
+            width: 500px;
+            height: 70px;
+            margin-top: 30px;
+        }
+        #click{
+            margin: 10px 0;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+        }
+
+        
+        #email,
+        #email1{
+            
+            width: 100px;
+            border: none;
+            border-bottom: black dashed 3px ;
+            background-color: #ededed;
+        }
+
+        
+        #pwd{
+            margin-left: 6cap;
+        }
+
+        #checkPwd{
+            margin-left: 15px;
+        }
+
+        #address1{
+            margin-left: 100px;
+        }
+        
+        #address2{
+            margin-left: 145px;
+        }
+
+        #email1,
+        #id{
+            margin-left: 80px;
+        }
+
+        .required_id{
+            font-size: 12px;
+            margin-left: 150px;
+            color: red;
+            
+        }
+
+        .hidden{
+            display: none;
+        }
+      
+
+    </style>
+</head>
+<body>
+    <form>
+        <div id="d1">
+            <div id="d2">
+                <div class="user">
+                    아이디    
+                    <input type="text" class="input" id="id" required onblur="checkput()"><br>
+                    <span class="required_id hidden" id="required_id1">필수 입력 항목입니다.</span>
+                </div>
+                <div class="user">
+                    패스워드
+                    <input type="password" class="input" id="pwd" required onblur="checkput()" onkeyup="checkpwd(this.value)"><br>
+                    <span class="required_id hidden" id="required_id2" >필수 입력 항목입니다.</span>
+                    <span class="required_id hidden" id="pwd1">영문자 대/소문자 특수문자, 숫자 포함 8 ~ 32자</span>
+                </div>
+                <div class="user">
+                    패스워드 확인
+                    <input type="password" class="input" id="checkPwd" required onblur="checkput()"><br>
+                    <span class="required_id hidden" id="required_id3">필수 입력 항목입니다.</span>
+                </div>
+                <div class="user">
+                    이메일
+                    <input type="email" class="input" id="email1">
+                    @ 
+                    <input type="email" class="input" id="email">
+                </div>
+                <div class="user">
+                    주소
+                    <input type="text" class="input" id="address1"><br><br>
+                    <input type="text" class="input" id="address2">
+                </div>
+                <div id="click">
+                    <button id="click1" type="submit" name="click3" >
+                    <label  for="click3" >가 입</label></button>
+                    
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+    <script>
+        function checkput() {
+            const cr = document.getElementById("id");
+            const ri = document.getElementById("required_id1")
+            if(cr.value === ""){
+                ri.classList.remove("hidden")
+            }else{
+                ri.classList.add("hidden")
+            }
+        }
+
+        function checkpwd(pwd){
+            const regRxp = /^(?=.*[a-zA-Z])(?=.*[\d])(?=.*[!@#$%^&*()_+|~\-={}[\]:;<>?,./])[A-Za-z\d!@#$%^&*()_+|~\-={}[\]:;<>?,./]{8,32}$/;
+            const ri = document.getElementById("pwd1") 
+            if(!regRxp.test(ri.value)) {
+                ri.classList.add("hidden");
+                return;
+            } else {
+                ri.classList.remove("hidden");
+            }
+        }
+    </script>
+    
+</body>
+</html>

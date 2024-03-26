@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d1{
+            box-sizing: border-box;
+            border: 1px solid #6990b3;
+            background-color: #deebf7;
+            width: 1000px;
+            height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #d2{
+            border: 1px solid #e0e1e0;
+            background-color: #ededed;
+            width: 55%;
+            height: 80%;
+        }
+        .user{
+            font-weight: bold;
+            font-size: larger;
+            padding-top: 50px;
+            padding-left: 20px;
+            width: 80%;
+            height: auto;
+            margin-left: 30px;
+
+        }
+        input{
+            width: 250px;
+            border: none;
+            border-bottom: black dashed 3px ;
+            background-color: #ededed;
+            
+        }
+
+        #click1{
+            border: 1px solid #d8e6cf;
+            background-color: #c5e0b4;
+            font-size: 20px;
+            font-weight: bolder;
+            width: 500px;
+            height: 70px;
+            margin-top: 30px;
+        }
+        #click{
+            margin: 10px 0;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <form action="">
+        <div id="d1">
+            <div id="d2">
+                <div class="user">
+                    아이디    
+                    <input type="text" class="input" style="margin-left: 100px;">
+                </div>
+                <div class="user">
+                    패스워드
+                    <input type="password" class="input" style="margin-left: 80px;">
+                </div>
+                <div class="user">
+                    패스워드 확인
+                    <input type="password" class="input" style="margin-left: 35px;">
+                </div>
+                <div class="user">
+                    이메일
+                    <input type="email" class="input" style="margin-left: 100px;">
+                </div>
+                <div class="user">
+                    주소
+                    <input type="text" class="input" style="margin-left: 120px;"><br><br>
+                    <input type="text" class="input" style="margin-left: 165px;">
+                </div>
+                <div id="click">
+                    <button id="click1" type="submit" name="click3">
+                    <label  for="click3" >가 입</label></button>
+                    
+                </div>
+            </div>
+        </div>
+    </form>
+    
+</body>
+</html>
